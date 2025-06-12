@@ -2,55 +2,61 @@ package com.bugra.habit.model;
 
 public class Habit {
 
-    private String habitName;
-    private String habitDescription;
-    private int habitGoal;
-    private int habitStatus;
+    private String name;
+    private String description;
+    private int goal;
+    private int status;
 
-    public Habit(String habitName, String habitDescription, int habitGoal, int habitStatus) {
-        this.habitName = habitName;
-        this.habitDescription = habitDescription;
-        this.habitGoal = habitGoal;
-        this.habitStatus = habitStatus;
+    public Habit(String name, String description, int goal) {
+        this.name = name;
+        this.description = description;
+        this.goal = goal;
+        this.status = 0;
     }
 
-    public String getHabitName() {
-        return this.habitName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setHabitName(String habitName) {
-        this.habitName = habitName;
+    public void setName(String habitName) {
+        this.name = habitName;
     }
 
-    public String getHabitDescription() {
-        return this.habitDescription;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setHabitDescription(String habitDescription) {
-        this.habitDescription = habitDescription;
+    public void setDescription(String habitDescription) {
+        this.description = habitDescription;
     }
 
-    public int getHabitGoal() {
-        return this.habitGoal;
+    public int getGoal() {
+        return this.goal;
     }
 
-    public void setHabitGoal(int habitGoal) {
-        this.habitGoal = habitGoal;
+    public void setGoal(int habitGoal) {
+        this.goal = habitGoal;
     }
 
-    public int getHabitStatus() {
-        return this.habitStatus;
+    public int getStatus() {
+        return this.status;
     }
 
-    public void setHabitStatus(int habitStatus) {
-        this.habitStatus = habitStatus;
+    public void setStatus(int habitStatus) {
+        this.status = habitStatus;
+    }
+
+    public void incrementStatus() {
+        this.status++;
     }
 
     public boolean goalAchieved() {
-        if (this.habitGoal == this.habitStatus) {
-            return true;
-        }
-        return false;
+        return this.status == this.goal;
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
     }
 
 }

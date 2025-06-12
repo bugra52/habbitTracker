@@ -7,10 +7,12 @@ public class HabitEntry {
 
     private LocalDate date;
     private boolean achieved;
+    private Habit habit;
 
-    public HabitEntry(LocalDate date, boolean achieved) {
+    public HabitEntry(LocalDate date, Habit habit, boolean achieved) {
         this.date = date;
         this.achieved = achieved;
+        this.habit = habit;
     }
 
     public boolean isAchieved() {
@@ -27,6 +29,14 @@ public class HabitEntry {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Habit getHabit() {
+        return habit;
+    }
+
+    public void setHabit(Habit habit) {
+        this.habit = habit;
     }
 
 }
